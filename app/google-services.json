@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "313064326094",
+    "project_id": "picpho-b145d",
+    "storage_bucket": "picpho-b145d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313064326094:android:92c74a82af1bf96206a19f",
+        "android_client_info": {
+          "package_name": "com.picpho.pic_pho"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313064326094-g3f227g9m9u4q1fe0jv1nm1jrhoh0she.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5P7ZEZZaWcl5VHJTrhtCTDqCDYyEktsQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313064326094-g3f227g9m9u4q1fe0jv1nm1jrhoh0she.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#63C6F7</color>
+    <color name="picpho_blue">#76CBFF</color>
+    <color name="picpho_yellow">#FFD217</color>
+    <color name="picpho_salmon">#FE8D6F</color>
+    <color name="colorBackGroundGray">#CCCCCC</color>
+    <color name="colorPink">#FFCDD2</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+</resources>

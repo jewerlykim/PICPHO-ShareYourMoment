@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.picpho.pic_pho">
+    <!-- for wifi direct -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.google.android.apps.photos.permission.GOOGLE_PHOTOS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:name="com.picpho.pic_pho.App"
+        android:allowBackup="true"
+        android:icon="@drawable/picphomainlogo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/picphomainlogo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+
+        <activity android:name="com.picpho.pic_pho.PhotoAlbum.PhotoAlbumViewPagerActivity"></activity>
+        <activity android:name="com.picpho.pic_pho.WaitingRoomServer.ServerWaitingRoomActivity" />
+        <activity
+            android:name="com.picpho.pic_pho.SplashActivity"
+            android:screenOrientation="portrait">
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.picpho.pic_pho.SelectP2pOrServerActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.picpho.pic_pho.MakeGroup.MakeGroupActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.picpho.pic_pho.PhotoRoomServer.ServerPhotoRoomActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.picpho.pic_pho.Lobby.LobbyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.picpho.pic_pho.PhotoRoom.PhotoRoomActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.picpho.pic_pho.LoginActivity"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="oauth"
+                    android:scheme="KAKAOSCHEME" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.picpho.pic_pho.WifiDirect.WifiDirectMainActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.picpho.pic_pho.WifiDirect.WaitingForOwnerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.picpho.pic_pho.PhotoRoomServer.ServerPhotoEnlargeActivity"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.picpho.pic_pho.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+            <grant-uri-permission
+                android:path="string"
+                android:pathPattern="string"
+                android:pathPrefix="string" />
+        </provider>
+
+        <service
+            android:name="com.picpho.pic_pho.WifiDirect.SendStreamIntentService"
+            android:exported="false" />
+        <service
+            android:name="com.picpho.pic_pho.UnCatchTaskService"
+            android:stopWithTask="false" />
+        <service android:name="com.picpho.pic_pho.MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
